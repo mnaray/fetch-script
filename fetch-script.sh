@@ -8,12 +8,13 @@ packages=$(pacman -Q | wc -l)
 os=$(lsb_release -d | sed 's/\Description://g' | cut -b 2-)
 kernel=$(uname -r)
 uptime=$(uptime -p)
+orphans=$(pacman -Qdt | wc -l)
 echo $"                 ▄█▄                
                 ▄███▄               OS:$os
                ▄█████▄              Kernel:$kernel
               ▄███████▄             Uptime:$uptime
              ▄ ▀▀██████▄            Packages:$packages
-            ▄██▄▄ ▀█████▄           
+            ▄██▄▄ ▀█████▄           Orphaned Packages:$orphans
            ▄█████████████▄          
           ▄███████████████▄          
          ▄█████████████████▄         
