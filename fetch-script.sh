@@ -4,7 +4,7 @@
 #| |_ / _ \ __/ __| '_ \    | | | '_ \ / _ \/ __|/ _ \ \___ \| __/ _` | __/ __|
 #|  _|  __/ || (__| | | |   | | | | | | (_) \__ \  __/  ___) | || (_| | |_\__ \
 #|_|  \___|\__\___|_| |_|   |_| |_| |_|\___/|___/\___| |____/ \__\__,_|\__|___/
-packages=$(pacman -Q | wc -l)
+packages=$(apt list --installed | wc -l)
 os=$(lsb_release -d | sed 's/\Description://g' | cut -b 2-)
 kernel=$(uname -r)
 uptime=$(uptime -p)
